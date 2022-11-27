@@ -1,0 +1,31 @@
+{
+  "name": "medical-scientific-community",
+  "version": "1.0.0",
+  "description": "medical-scientific-community",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Catmorx/MEDICAL-SCIENTIFIC-COMMUNITY.git"
+  },
+  "keywords": [
+    "API",
+    "REST"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Catmorx/MEDICAL-SCIENTIFIC-COMMUNITY/issues"
+  },
+  "homepage": "https://github.com/Catmorx/MEDICAL-SCIENTIFIC-COMMUNITY#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
