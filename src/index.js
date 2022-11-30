@@ -1,12 +1,10 @@
-// const express = require('express'); // con sintaxis antigua
-import express from "express"; // con sintaxis nueva EcmaScript 6
+import app from "./app.js";
 
-const app = express();
+const index = () => {
+  app.listen(app.get("port"), () => {
+    console.log("Server is running on port", app.get("port"));
+  });
+}
 
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
+index();
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
