@@ -10,10 +10,10 @@ import {
 const router = Router({ caseSensitive: true });
 
 router
-  .get("/example", getAllDoctors)
-  .get("/example/:id", getDoctor)
-  .post("/example", createDoctor)
-  .patch("/example/:id", updateDoctor)
-  .delete("/example/:id", deleteDoctor);
+  .get("/doctor", getAllDoctors)
+  .get("/doctor/:id", getDoctor)
+  .post("/doctor", createDoctor)
+  .patch("/doctor/:id", updateDoctor)
+  .delete("/doctor/:id", deleteDoctor);
 
 export default router;

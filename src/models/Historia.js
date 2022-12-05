@@ -19,7 +19,7 @@ const Historia = new Schema(
             type: String,
             required: true
         },
-        Signos:{
+        signos:{
             type: String,
             required: true
         },
