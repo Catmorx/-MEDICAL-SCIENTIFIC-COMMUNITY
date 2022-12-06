@@ -1,5 +1,5 @@
 export const getAllHistoria = (req, res) => {
-    res.send("");
+    res.send("hola");
 };
 
 export const getHistoria = (req, res) => {
@@ -13,7 +13,8 @@ export const createHistoria = (req, res) => {
 };
 
 export const updateHistoria = (req, res) => {
-    const { id, codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico } = req.body;
+    const { id } = req.params;
+    const { codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico } = req.body;
     res.send({ id, codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico });
 };
 

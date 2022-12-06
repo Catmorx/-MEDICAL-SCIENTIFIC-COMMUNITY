@@ -13,7 +13,8 @@ export const createDoctor = (req, res) => {
 };
 
 export const updateDoctor = (req, res) => {
-    const { id, nombre, apellido, documento, tarjetaProfesional, graduacion } = req.body;
+    const { id } = req.params;
+    const { nombre, apellido, documento, tarjetaProfesional, graduacion } = req.body;
     res.send({ id, nombre, apellido, documento, tarjetaProfesional, graduacion });
 };
 

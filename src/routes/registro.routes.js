@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { updateDoctor } from "../controllers/doctors.controller";
 
 import {
     getAllRegistro,
@@ -7,15 +6,15 @@ import {
     updateRegistro,
     createRegistro,
     deleteRegistro,
-} from "../controllers/registro.controller";
+} from "../controllers/registro.controller.js";
 
 const router = Router({ caseSensitive: true });
 
 router
-    .get("", getAllRegistro)
-    .get("", getRegistro)
-    .post("", createRegistro)
-    .patch("", updateDoctor)
-    .delete("", deleteRegistro);
+    .get("/registro", getAllRegistro)
+    .get("/registro/:id", getRegistro)
+    .post("/registro", createRegistro)
+    .patch("/registro/:id", updateRegistro)
+    .delete("/registro/:id", deleteRegistro);
 
 export default router;
