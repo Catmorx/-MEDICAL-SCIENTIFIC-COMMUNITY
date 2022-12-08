@@ -1,25 +1,45 @@
-export const getAllEspecialidad = (req, res) => {
-    res.send("hello world from Especialidad get");
+import { response } from "express";
+import {
+  findAll,
+  findById,
+  create,
+  updateById,
+  deleteById
+} from "./../services/especialidad.services.js";
+
+export const getAllEspecialidad = async(req, res) => {
+    const especialidades = await findAll();
+    res.json(especialidades);
   };
   
-  export const getEspecialidad = (req, res) => {
+  export const getEspecialidad = async (req, res) => {
     const { id } = req.params;
-    res.send({ id });
+    const especialidad = await findById(id);
+    res.status(200).json(especialidad);
   };
   
-  export const createEspecialidad = (req, res) => {
-    const {nombre,description } = req.body;
-    res.send({ nombre,description });
+  export const createEspecialidad = async (req, res) => {
+    const {nombre, descripcion } = req.body;
+    const especialidad = await create({
+      nombre,
+      descripcion,
+    });
+    res.status(201).json(especialidad);
   };
   
-  export const updateEspecialidad = (req, res) => {
+  export const updateEspecialidad = async (req, res) => {
     const { id } = req.params;
-    const { nombre,description } = req.body;
-    res.send({ id, nombre,description});
+    const { nombre, descripcion } = req.body;
+    const response = await updateById(id, {
+      nombre,
+      descripcion,
+    });
+    res.status(200).json({message: `La especialidad${response ? "": " no"} fue actualizado`});
   };
   
-  export const deleteEspecialidad = (req, res) => {
+  export const deleteEspecialidad = async (req, res) => {
     const { id } = req.params;
-    res.send({ id });
+    await deleteById(id);
+    res.sendStatus(204);
   };
   

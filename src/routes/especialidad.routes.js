@@ -1,19 +1,19 @@
 import { Router } from "express";
 import {
-  createespecialidad,
-  deleteespecialidad,
-  getAllespecialidad,
-  updateespecialidad,
-  getespecialidad,
+  getAllEspecialidad,
+  getEspecialidad,
+  createEspecialidad,
+  updateEspecialidad,
+  deleteEspecialidad,
 } from "../controllers/especialidad.controller.js";
 
 const router = Router({ caseSensitive: true });
 
 router
-  .get("/especialidad", getAllespecialidad)
-  .get("/especialidad/:id", getespecialidad)
-  .post("/especialidad", createespecialidad)
-  .patch("/especialidad/:id", updateespecialidad)
-  .delete("/especialidad/:id", deleteespecialidad);
+  .get("/especialidad", getAllEspecialidad)
+  .get("/especialidad/:id", getEspecialidad)
+  .post("/especialidad", createEspecialidad)
+  .patch("/especialidad/:id", updateEspecialidad)
+  .delete("/especialidad/:id", deleteEspecialidad);
 
 export default router;
