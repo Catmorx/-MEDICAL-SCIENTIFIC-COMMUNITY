@@ -5,7 +5,7 @@ import {
   getAllAgendar,
   updateAgendar,
   getAgendar,
-} from "../controllers/Agendar.controller.js";
+} from "../controllers/agendar.controller.js";
 
 const router = Router({ caseSensitive: true });
 

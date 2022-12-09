@@ -1,4 +1,4 @@
-import Historia from "./../models/Historia.js";
+import Historia from "../models/Historia.js";
 
 export const findAll = async () =>{
     return await Historia.find();

@@ -5,7 +5,7 @@ import{
     create,
     updateById,
     deleteById
-} from "./../servicios/historia.servicie.js";
+} from "../servicios/historia.service.js";
 
 export const getAllHistoria = async (req, res) => {
     const historias = await findAll();

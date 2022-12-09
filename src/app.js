@@ -6,6 +6,7 @@ import config from "./config.js";
 import doctorsRoutes from "./routes/doctors.routes.js";
 import historiaRoutes from "./routes/historia.routes.js";
 import registroRoutes from "./routes/registro.routes.js";
+import agendarRoutes from "./routes/agendar.routes.js";
 
 
 const app = express();
@@ -24,6 +25,6 @@ app.get("/", (req, res) => {
 app.use(doctorsRoutes);
 app.use(registroRoutes);
 app.use(historiaRoutes);
-
+app.use(agendarRoutes);
 
 export default app;
