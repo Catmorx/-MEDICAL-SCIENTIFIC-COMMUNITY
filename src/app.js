@@ -7,6 +7,7 @@ import doctorsRoutes from "./routes/doctors.routes.js";
 import historiaRoutes from "./routes/historia.routes.js";
 import registroRoutes from "./routes/registro.routes.js";
 import especialidadRoutes from "./routes/especialidad.routes.js";
+import mensajeRoutes from "./routes/mensaje.routes.js";
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(doctorsRoutes);
 app.use(registroRoutes);
 app.use(historiaRoutes);
 app.use(especialidadRoutes);
+app.use(mensajeRoutes);
 
 
 export default app;

@@ -1,25 +1,45 @@
-export const getAllMensaje = (req, res) => {
-    res.send("hello world from Mensaje get");
+import { response } from "express";
+import {
+  findAll,
+  findById,
+  create,
+  updateById,
+  deleteById
+} from "./../services/mensaje.services.js";
+
+export const getAllMensaje = async (req, res) => {
+  const mensaje = await findAll();
+  res.json(mensaje);
   };
   
-  export const getMensaje = (req, res) => {
+  export const getMensaje = async (req, res) => {
     const { id } = req.params;
-    res.send({ id });
+    const mensaje = await findById(id);
+    res.status(200).json(mensaje);
   };
   
-  export const createMensaje = (req, res) => {
+  export const createMensaje = async (req, res) => {
     const { descripcion, score } = req.body;
-    res.send({ descripcion, score });
+    const especialidad = await create({
+      descripcion,
+      score,
+    });
+    res.status(201).json(especialidad);
   };
   
-  export const updateMensaje = (req, res) => {
+  export const updateMensaje = async (req, res) => {
     const { id } = req.params;
     const { descripcion, score} = req.body;
-    res.send({ descripcion, score});
+    const response = await updateById(id, {
+      descripcion,
+      score,
+    });
+    res.status(200).json({message: `El mensaje${response ? "": " no"} fue actualizado`});
   };
   
-  export const deleteMensaje = (req, res) => {
+  export const deleteMensaje = async (req, res) => {
     const { id } = req.params;
-    res.send({ id });
+    await deleteById(id);
+    res.sendStatus(204);
   };
   
