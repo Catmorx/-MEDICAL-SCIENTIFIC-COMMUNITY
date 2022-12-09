@@ -7,7 +7,7 @@ const Historia = new Schema(
             required: true,
             unique: true
         },
-        antedecentes: {
+        antecedentes: {
             type: String,
             required: true
         },

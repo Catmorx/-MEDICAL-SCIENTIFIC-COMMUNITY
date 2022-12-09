@@ -1,24 +1,52 @@
-export const getAllHistoria = (req, res) => {
-    res.send("hola");
+import { response } from "express";
+import{
+    findAll,
+    findById,
+    create,
+    updateById,
+    deleteById
+} from "./../servicios/historia.servicie.js";
+
+export const getAllHistoria = async (req, res) => {
+    const historias = await findAll();
+    res.json(historias);
 };
 
-export const getHistoria = (req, res) => {
+export const getHistoria = async (req, res) => {
     const { id } = req.params;
-    res.send({ id });
+    const historia = await findById(id);
+    res.status(200).json(historia);
 };
 
-export const createHistoria = (req, res) => {
+export const createHistoria = async(req, res) => {
     const { codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico } = req.body;
-    res.send({ codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico });
+    const historia = await create({
+        codigoHistoria,
+        antecedentes,
+        observaciones,
+        alergias,
+        signos,
+        diagnostico,
+    });
+    res.status(201).json(historia);
 };
 
-export const updateHistoria = (req, res) => {
+export const updateHistoria = async (req, res) => {
     const { id } = req.params;
     const { codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico } = req.body;
-    res.send({ id, codigoHistoria, antecedentes, observaciones, alergias, signos, diagnostico });
+    const response = await updateById(id,{
+        codigoHistoria,
+        antecedentes,
+        observaciones,
+        alergias,
+        signos,
+        diagnostico,
+    });
+    res.status(200).json({message: `La historia ${response? "": "no"} fue actualizada`});
 };
 
-export const deleteHistoria = (req, res) => {
+export const deleteHistoria = async(req, res) => {
     const { id } = req.params;
-    res.send({ id });
+    await deleteById(id);
+    res.sendStatus(204);
 };
