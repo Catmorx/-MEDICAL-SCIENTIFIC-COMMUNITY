@@ -5,15 +5,15 @@ import {
   getAllMensaje,
   updateMensaje,
   getMensaje,
-} from "../controllers/Mensaje.controller";
+} from "../controllers/mensaje.controller.js";
 
 const router = Router({ caseSensitive: true });
 
 router
-  .get("/Mensaje", getAllMensaje)
-  .get("/Mensaje/:id", getMensaje)
-  .post("/Mensaje", createMensaje)
-  .patch("/Mensaje/:id", updateMensaje)
-  .delete("/Mensaje/:id", deleteMensaje);
+  .get("/mensaje", getAllMensaje)
+  .get("/mensaje/:id", getMensaje)
+  .post("/mensaje", createMensaje)
+  .patch("/mensaje/:id", updateMensaje)
+  .delete("/mensaje/:id", deleteMensaje);
 
 export default router;
