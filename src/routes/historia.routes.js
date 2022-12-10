@@ -1,11 +1,11 @@
 import { Router } from "express";
 
 import {
-    createHistoria,
-    deleteHistoria,
     getAllHistoria,
     getHistoria,
+    createHistoria,
     updateHistoria,
+    deleteHistoria,
 } from "../controllers/historia.controller.js";
 
 const router = Router({ caseSensitive: true });
