@@ -5,7 +5,7 @@ import {
   getAllMedicamentos,
   updateMedicamentos,
   getMedicamentos,
-} from "../controllers/Medicamentos.controller";
+} from "../controllers/medicamentos.controller.js";
 
 const router = Router({ caseSensitive: true });
 

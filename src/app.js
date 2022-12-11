@@ -10,6 +10,12 @@ import especialidadRoutes from "./routes/especialidad.routes.js";
 import mensajeRoutes from "./routes/mensaje.routes.js";
 import agendarRoutes from "./routes/agendar.routes.js";
 
+
+
+
+
+import medicamentoRoutes from "./routes/medicamentos.routes.js";
+
 const app = express();
 
 app.use(express.json());
@@ -30,5 +36,10 @@ app.use(especialidadRoutes);
 app.use(mensajeRoutes);
 app.use(agendarRoutes);
 
+
+
+
+
+app.use(medicamentoRoutes);
 
 export default app;
