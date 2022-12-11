@@ -5,15 +5,15 @@ import {
   getAllMedicamentos,
   updateMedicamentos,
   getMedicamentos,
-} from "../controllers/Medicamentos.controller";
+} from "../controllers/medicamentos.controller.js";
 
 const router = Router({ caseSensitive: true });
 
 router
-  .get("/Medicamentos", getAllMedicamentos)
-  .get("/Medicamentos/:id", getMedicamentos)
-  .post("/Medicamentos", createMedicamentos)
-  .patch("/Medicamentos/:id", updateMedicamentos)
-  .delete("/Medicamentos/:id", deleteMedicamentos);
+  .get("/medicamentos", getAllMedicamentos)
+  .get("/medicamentos/:id", getMedicamentos)
+  .post("/medicamentos", createMedicamentos)
+  .patch("/medicamentos/:id", updateMedicamentos)
+  .delete("/medicamentos/:id", deleteMedicamentos);
 
 export default router;

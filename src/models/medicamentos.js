@@ -27,12 +27,12 @@ const medicamentos = new Schema(
             type: Date,
             required: true
         },
-        autoizacionRequerida:{
+        autorizacionRequerida:{
             type: String,
             required: true
         },
     },
-    {
+    {  
         timestamps: true
     }
 )

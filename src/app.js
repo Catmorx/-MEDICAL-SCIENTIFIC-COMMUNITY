@@ -5,6 +5,12 @@ import config from "./config.js";
 
 import doctorsRoutes from "./routes/doctors.routes.js";
 
+
+
+
+
+import medicamentoRoutes from "./routes/medicamentos.routes.js";
+
 const app = express();
 
 app.use(express.json());
@@ -19,5 +25,10 @@ app.get("/", (req, res) => {
 });
 
 app.use(doctorsRoutes);
+
+
+
+
+app.use(medicamentoRoutes);
 
 export default app;
