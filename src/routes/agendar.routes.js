@@ -10,10 +10,10 @@ import {
 const router = Router({ caseSensitive: true });
 
 router
-  .get("/Agendar", getAllAgendar)
-  .get("/Agendar/:id", getAgendar)
-  .post("/Agendar", createAgendar)
-  .patch("/Agendar/:id", updateAgendar)
-  .delete("/Agendar/:id", deleteAgendar);
+  .get("/agendar", getAllAgendar)
+  .get("/agendar/:id", getAgendar)
+  .post("/agendar", createAgendar)
+  .patch("/agendar/:id", updateAgendar)
+  .delete("/agendar/:id", deleteAgendar);
 
 export default router;

@@ -1,4 +1,4 @@
-import Agendar from "./../models/Agendar.js";
+import Agendar from "../models/Agendar.js";
 
 export const findAll = async () =>{
     return await Agendar.find();

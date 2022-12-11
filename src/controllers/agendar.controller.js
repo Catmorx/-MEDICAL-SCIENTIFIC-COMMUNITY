@@ -4,7 +4,7 @@ import{
   findById,
   updateById,
   deleteById,
-}from "./../servicios/agendar.service.js";
+}from "./../services/agendar.services.js";
 
 export const getAllAgendar = async(req, res) => {
     const agendar = await findAll();
@@ -39,6 +39,6 @@ export const getAllAgendar = async(req, res) => {
   export const deleteAgendar = async(req, res) => {
     const { id } = req.params;
     await deleteById(id);
-    res.sendtatus(204);
+    res.sendStatus(204);
   };
   
