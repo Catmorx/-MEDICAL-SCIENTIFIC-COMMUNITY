@@ -1,4 +1,4 @@
-import Medicamentos from "../models/Medicamentos.js";
+
 import {
   findAll,
   create,
