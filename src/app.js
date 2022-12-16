@@ -37,6 +37,6 @@ app.use(especialidadRoutes);
 app.use(mensajeRoutes);
 app.use(agendarRoutes);
 app.use(medicamentoRoutes);
-app.use("/login", loginRoutes)
+app.use(loginRoutes)
 
 export default app;
