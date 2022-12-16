@@ -3,6 +3,7 @@ import express from "express"; // con sintaxis nueva EcmaScript 6
 import cors from "cors"
 import { connection } from "./database.js";
 import config from "./config.js";
+import cors from 'cors';
 
 import doctorsRoutes from "./routes/doctors.routes.js";
 import historiaRoutes from "./routes/historia.routes.js";
@@ -22,6 +23,7 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.set("port", config.port);
 
