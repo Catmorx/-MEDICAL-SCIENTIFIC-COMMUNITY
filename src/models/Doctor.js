@@ -24,6 +24,14 @@ const Doctor = new Schema(
       type: Date,
       required: true,
     },
+    especialidad: {
+      type: String,
+      required: true,
+    },  
+    citas: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Agendar'
+    }]
   },
   {
     timestamps: true,

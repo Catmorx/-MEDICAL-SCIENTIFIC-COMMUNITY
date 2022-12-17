@@ -18,7 +18,7 @@ export const getDoctor = async (req, res) => {
 };
 
 export const createDoctor = async (req, res) => {
-  const { nombre, apellido, documento, tarjetaProfesional, graduacion } =
+  const { nombre, apellido, documento, tarjetaProfesional, graduacion, especialidad } =
     req.body;
   const doctor = await create({
     nombre,
@@ -26,6 +26,7 @@ export const createDoctor = async (req, res) => {
     documento,
     tarjetaProfesional,
     graduacion,
+    especialidad
   });
   res.status(201).json(doctor);
 };

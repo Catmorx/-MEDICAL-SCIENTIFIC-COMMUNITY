@@ -49,6 +49,10 @@ const Paciente = new Schema(
       type: String,
       required: true,
     },
+    citas: [{
+      type: Schema.Types.ObjectId,
+      ref: "Agenda"
+    }]
   },
   {
     timestamps: true,

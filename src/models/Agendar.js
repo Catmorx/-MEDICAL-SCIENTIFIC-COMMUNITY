@@ -8,12 +8,21 @@ const Agendar = new Schema (
         },
         estado: {
             type : String,
-            required : true
+            required : true,
+            default: "Creado",
         },
+        doctor: {
+            type: Schema.Types.ObjectId,
+            ref: "Doctor"
+        },
+        paciente: {
+            type: Schema.Types.ObjectId,
+            ref: "Paciente"
+        }   
     },
     {
         timestamps: true
-    }
+    }  
 );
 
 export default model("Agendar", Agendar);
