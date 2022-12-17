@@ -47,7 +47,10 @@ export const createPaciente = async (req, res) => {
     clave: contraEncrip,
     entidad,
   });
-  res.status(201).json(paciente);
+  if(paciente){
+    res.status(201).json({message:"Se ha registrado"});
+  }
+  
 };
 
 export const updatePaciente = async (req, res) => {
