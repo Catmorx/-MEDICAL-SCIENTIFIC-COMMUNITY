@@ -18,7 +18,7 @@ export const getAllEspecialidad = async(req, res) => {
   };
   
   export const createEspecialidad = async (req, res) => {
-    const {nombre, descripcion } = req.body;
+    const {nombre, descripcion} = req.body;
     const especialidad = await create({
       nombre,
       descripcion,
