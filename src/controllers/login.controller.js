@@ -10,9 +10,10 @@ export default async function login(req, res){
         const document = await Paciente.findOne({"usuario": usuario})
 
         if(document != null){
-            const acces = await bcrypt.compare(password, document.clave)
+            const access = await bcrypt.compare(password, document.clave)
 
-            if(acces){
+            if(access){
+                const usuarioID ={_id: document._id}
                 res.status(200).json({message: "Bienvenido"})
             }
         }else{
@@ -20,7 +21,7 @@ export default async function login(req, res){
         }
 
     }catch (error){
-        res.status(401).json(error.message)
+        res.status(400).json(error.message)
 
     }
 }

@@ -34,7 +34,7 @@ export const updateAgendar = async (req, res) => {
   });
   res
     .status(200)
-    .json({ message: `La Agenda ${response ? "" : "no"} fue actualizada` });
+    .json({ message: `La agenda ${response ? "" : "no"} fue actualizada` });
 };
 
 export const deleteAgendar = async (req, res) => {
