@@ -25,10 +25,12 @@ export const createAgendar = async (req, res) => {
 
 export const updateAgendar = async (req, res) => {
   const { id } = req.params;
-  const { fecha, estado } = req.body;
+  const { fecha, hora, usuario, doctor } = req.body;
   const response = await updateById(id, {
     fecha,
-    estado,
+    hora,
+    usuario,
+    doctor
   });
   res
     .status(200)

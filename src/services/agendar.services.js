@@ -7,7 +7,7 @@ export const findAll = async () => {
 };
 
 export const findById = async (id) => {
-  return await Agendar.findById(id);
+  return await Agendar.findById(id).populate(["doctor", "paciente"]);
 };
 
 export const create = async (fecha, hora, usuario, doctorName) => {
@@ -23,7 +23,10 @@ export const create = async (fecha, hora, usuario, doctorName) => {
 };
 
 export const updateById = async (_id, data) => {
-  const agendar = await Agendar.findByIdAndUpdate(_id, data);
+  const doctor = await Doctor.findOne({ nombre: data.doctor });
+  const paciente = await Paciente.findOne({ usuario: data.usuario });
+  const agendar = await Agendar.findByIdAndUpdate(_id, {fecha: data.fecha, hora: data.hora, paciente: paciente._id, doctor: doctor._id,});
+  
   if (agendar) return true;
   return false;
 };
