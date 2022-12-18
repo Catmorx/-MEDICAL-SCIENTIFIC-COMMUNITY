@@ -18,13 +18,9 @@ export const getAgendar = async (req, res) => {
 };
 
 export const createAgendar = async (req, res) => {
-  const { fecha, usuario, doctorName } = req.body;
-  const agendar = await create({
-    fecha,
-    usuario,
-    doctorName
-  });
-  res.status(201).json(agendar);
+  const { fecha, hora, usuario, doctor } = req.body;
+  const agendar = await create(fecha, hora, usuario, doctor);
+  if (agendar) res.status(201).json({ message: "Cita agenda con exito" });
 };
 
 export const updateAgendar = async (req, res) => {
@@ -34,7 +30,9 @@ export const updateAgendar = async (req, res) => {
     fecha,
     estado,
   });
-  res.status(200).json({ message: `La Agenda ${response ? "" : "no"} fue actualizada` });
+  res
+    .status(200)
+    .json({ message: `La Agenda ${response ? "" : "no"} fue actualizada` });
 };
 
 export const deleteAgendar = async (req, res) => {
