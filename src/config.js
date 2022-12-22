@@ -9,6 +9,7 @@ export default {
     database : process.env.DATABASE,
     dbUser : process.env.DB_USER,
     dbPassword : process.env.DB_PASSWORD,
+    frontUrl: process.env.FRONT_URL,
     options : {
         retryWrites: true,
         w: "majority"

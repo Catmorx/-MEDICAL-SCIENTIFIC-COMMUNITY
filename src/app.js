@@ -16,7 +16,7 @@ import medicamentoRoutes from "./routes/medicamentos.routes.js";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: config.frontUrl,
   })
 );
 app.use(express.json());
