@@ -25,7 +25,7 @@ export const create = async (fecha, hora, usuario, doctorName) => {
 export const updateById = async (_id, data) => {
   const doctor = await Doctor.findOne({ nombre: data.doctor });
   const paciente = await Paciente.findOne({ usuario: data.usuario });
-  const agendar = await Agendar.findByIdAndUpdate(_id, {fecha: data.fecha, hora: data.hora, paciente: paciente._id, doctor: doctor._id,});
+  const agendar = await Agendar.findByIdAndUpdate(_id, {fecha: data.fecha, hora: data.hora, estado: data.estado,paciente: paciente._id, doctor: doctor._id,});
   
   if (agendar) return true;
   return false;

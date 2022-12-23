@@ -9,10 +9,11 @@ export default {
     database : process.env.DATABASE,
     dbUser : process.env.DB_USER,
     dbPassword : process.env.DB_PASSWORD,
-    frontUrl: process.env.FRONT_URL,
+    frontUrl: process.env.FRONT_URL || "http://localhost:3000",
+    secretKey: process.env.SECRET_KEY,
     options : {
         retryWrites: true,
         w: "majority"
-    }
+    },
 }
 
