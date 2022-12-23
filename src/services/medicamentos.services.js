@@ -1,4 +1,4 @@
-import Medicamentos from "./../models/Medicamentos.js";
+import Medicamentos from "../models/Medicamentos.js";
 
 export const findAll = async () => {
   return await Medicamentos.find();
